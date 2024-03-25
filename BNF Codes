@@ -7,3 +7,18 @@
 <resto_numeros> ::= <digito> <digito> <digito> <digito>
 <sufixo> ::= <digito> <digito> <digito> <digito>
 <digito> ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9"
+
+/* Testing */
+<program> ::= "programa\ninicio\n" <body> "fim"
+<body> ::= <valid_stm>*
+<valid_stm> ::= <atrib_stm> | <if_stm>
+<if_stm> ::= "se (" <condition> ") \ninicio\n" <body> "fim"
+<condition> ::= (<var> | <value> | <expression>) <com_operator> (<var> | <value> | <expression>)
+<atrib_stm> ::= <var> " = " (<value> | <expression> | <var>) ";\n"
+<expression> ::= (<value> | <var>) <operator> (<value> | <var>)
+<operator> ::= " + " | " - " | " * " | 
+<com_operator> ::= " > " | " < " | " >= " | " <= " | " == " | " != "
+<var> ::= <characters>+
+<value> ::= [0-9] | [1-9] [0-9]+
+<characters> ::= [a-z]
+
